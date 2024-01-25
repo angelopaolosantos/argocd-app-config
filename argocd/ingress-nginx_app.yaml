@@ -12,8 +12,8 @@ spec:
   project: default
   sources:
   - repoURL: 'https://kubernetes.github.io/ingress-nginx'
-    chart: ingress-nginx/ingress-nginx
-    targetRevision: 1.9.5
+    chart: ingress-nginx
+    targetRevision: 4.9.0
     helm:
       valueFiles:
       - $values/apps/ingress/values.yaml

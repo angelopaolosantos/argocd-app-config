@@ -11,10 +11,12 @@ metadata:
 spec:
   project: default
   sources:
-  - chart: linkerd/linkerd-crds
+  - chart: linkerd-crds
     repoURL: https://helm.linkerd.io/stable
-  - chart: linkerd/linkerd-control-plane
+    targetRevision: 1.8.0
+  - chart: linkerd-control-plane
     repoURL: https://helm.linkerd.io/stable
+    targetRevision: 1.8.0
     helm:
       valueFiles:
       - $values/apps/linkerd/values.yaml
