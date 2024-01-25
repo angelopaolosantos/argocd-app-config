@@ -20,10 +20,10 @@ spec:
     helm:
       valueFiles:
       - $values/apps/linkerd/values.yaml
-  # - repoURL: 'https://github.com/angelopaolosantos/argocd-app-config.git'
-  #   targetRevision: main
-  #   path: apps/linkerd/
-  #   ref: values
+  - repoURL: 'https://github.com/angelopaolosantos/argocd-app-config.git'
+    targetRevision: main
+    path: apps/linkerd/
+    ref: values
   destination:
     server: https://kubernetes.default.svc
     namespace: linkerd
