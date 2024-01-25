@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-ingress
+  namespace: argocd
+  finalizers:
+    # The default behaviour is foreground cascading deletion
+    - resources-finalizer.argocd.argoproj.io
+    # Alternatively, you can use background cascading deletion
+    # - resources-finalizer.argocd.argoproj.io/background
+spec:
+  project: default
+  sources:
+  - repoURL: 'https://helm.nginx.com/stable'
+    chart: nginx-stable/nginx-ingress
+    targetRevision: 3.4.2
+    helm:
+      valueFiles:
+      - $values/apps/ingress/values.yaml
+  - repoURL: 'https://git.example.com/org/value-files.git'
+    targetRevision: HEAD
+    path: apps/nginx-ingress/
+    ref: values
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: nginx-ingress
+  syncPolicy: 
+    automated:
+      prune: true
+      selfHeal: false
+  syncOptions:
+  - CreateNamespace=true
+  - ApplyOutOfSyncOnly=true

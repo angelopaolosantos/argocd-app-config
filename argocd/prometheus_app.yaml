@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prometheus
+  namespace: argocd
+  finalizers:
+    # The default behaviour is foreground cascading deletion
+    - resources-finalizer.argocd.argoproj.io
+    # Alternatively, you can use background cascading deletion
+    # - resources-finalizer.argocd.argoproj.io/background
+spec:
+  project: default
+  sources:
+  - repoURL: 'https://prometheus-community.github.io/helm-charts'
+    chart: prometheus
+    targetRevision: 15.7.1
+    helm:
+      valueFiles:
+      - $values/apps/prometheus/values.yaml
+  - repoURL: 'https://git.example.com/org/value-files.git'
+    targetRevision: HEAD
+    path: apps/prometheus-stack/
+    ref: values
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: prometheus
+  syncPolicy: 
+    automated:
+      prune: true
+      selfHeal: false
+  syncOptions:
+  - CreateNamespace=true
+  - ApplyOutOfSyncOnly=true
