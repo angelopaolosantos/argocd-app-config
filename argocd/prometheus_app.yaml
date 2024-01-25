@@ -19,7 +19,7 @@ spec:
       - $values/apps/prometheus/values.yaml
   - repoURL: 'https://github.com/angelopaolosantos/argocd-app-config.git'
     targetRevision: main
-    path: apps/prometheus-stack/
+    path: apps/prometheus/
     ref: values
   destination:
     server: https://kubernetes.default.svc
