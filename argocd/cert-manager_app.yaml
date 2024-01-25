@@ -18,8 +18,8 @@ spec:
           value: "true"
     repoURL: https://charts.jetstack.io
     targetRevision: v1.3.1
-  - repoURL: 'https://git.example.com/org/value-files.git'
-    targetRevision: HEAD
+  - repoURL: 'https://github.com/angelopaolosantos/argocd-app-config.git'
+    targetRevision: main
     path: apps/cert-manager/
   destination:
     server: https://kubernetes.default.svc

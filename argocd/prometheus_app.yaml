@@ -17,8 +17,8 @@ spec:
     helm:
       valueFiles:
       - $values/apps/prometheus/values.yaml
-  - repoURL: 'https://git.example.com/org/value-files.git'
-    targetRevision: HEAD
+  - repoURL: 'https://github.com/angelopaolosantos/argocd-app-config.git'
+    targetRevision: main
     path: apps/prometheus-stack/
     ref: values
   destination:
