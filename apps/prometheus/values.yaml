@@ -1,0 +1,12 @@
+alertmanager:
+  alertmanagerSpec:
+    storage: 
+      volumeClaimTemplate:
+        metadata:
+          name: data
+        spec:
+          storageClassName: local-path
+          accessModes: ["ReadWriteOnce"]
+          resources:
+            requests:
+              storage: 5Gi
