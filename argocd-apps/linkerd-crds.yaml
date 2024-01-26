@@ -18,12 +18,13 @@ spec:
     name:  authorizationpolicies.policy.linkerd.io
     jsonPointers:
     - /spec/names/shortNames
-    - group: ""
-  - kind: CustomResourceDefinition
+  - group: ""
+    kind: CustomResourceDefinition
     name:  meshtlsauthentications.policy.linkerd.io
     jsonPointers:
     - /spec/names/shortNames
-  - kind: CustomResourceDefinition
+  - group: ""
+    kind: CustomResourceDefinition
     name:  networkauthentications.policy.linkerd.io
     jsonPointers:
     - /spec/names/shortNames
