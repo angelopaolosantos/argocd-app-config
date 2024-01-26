@@ -19,10 +19,3 @@ spec:
       name: linkerd-trust-anchor
       namespace: linkerd
     type: kubernetes.io/tls
-  syncPolicy: 
-    automated:
-      prune: true
-      selfHeal: false
-    syncOptions:
-    - CreateNamespace=true
-    - ApplyOutOfSyncOnly=true
