@@ -11,6 +11,7 @@ spec:
   source:
     path: resources/linkerd
     repoURL: 'https://github.com/angelopaolosantos/argocd-app-config.git'
+    targetRevision: main
   syncPolicy: 
     automated:
       prune: true
