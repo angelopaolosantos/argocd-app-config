@@ -3,7 +3,7 @@ alertmanager:
     storage: 
       volumeClaimTemplate:
         metadata:
-          name: data
+          name: prometheus-data
         spec:
           storageClassName: local-path
           accessModes: ["ReadWriteOnce"]

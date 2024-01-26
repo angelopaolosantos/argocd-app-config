@@ -1,0 +1,28 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: linkerd-trust-anchor
+  namespace: linkerd
+spec:
+  encryptedData:
+    tls.crt: AgDIBEQIi5jDSe2Sg4UnEg0BhOgeoO/HfHqc3TIzauog0N0T1c3I+8OvCejxAFCIaTSomxv+mcH3uTKScTMIbcdMzRfnFOwTunkEREkScMbJK7E8RMP6/hPGtuXE7tjYyrhyTo+fFVhNwqaQ3ZRW0ofUYF0Avs8bR9Aoluck1Kwu4OatnWSEBeBpUpLQE2ZbOoj93YRqb6sEdJkwq6TNOXliY2kBuiipZyisFmMNrpBXEENmOwj1vtNMNuUDpDQIih2R+fHBi8atjqpRoBfpFiY5xWVZaEKu8JhHjB49y12wdnCqW0/Gy4a9Are1V7RFU9ZVCpU7N3mhjz8SBi/edFRn072cvdIDj8Aw+2gIm1MG6Qbtj+hfkq7RYfGOPEwAXQymnOLmZa1EoWy9GeRsIsnVB6J7PpoTlJeDvOg+LeGgMs7rvgC6YfWRVq58XbaiAgQFY8JJQlXQNDYeRL1fnK/AmhRUuMT1k+hipCQ9HR6u+MuPGHxvrrYawK7Fho/lfSNTezJhVO1chVu/XDJA5/n5rrbcfkc1CsKY/3KkI35sonRYndiHILKgtFG/yfWqKmKJMPkhVHx/+tY0YmNn/CK6vnbxhs5FWh30XadRZ+X/bjG3p8VlMpA4SC0JSJmdJXm7ZkVprgM0MwNsUkQXqXNxdPJdPmCgNS0qy5CKqaJ+jxfdj2tt3vzw7aY9kV3cW0t1Zydtb7tMXlQTFvS4uS+IQy/K2+zxKpZZbvYVxZXuE+ZxmVSd9Ewctl89N2ieg1apR4ddf16DlvMH41z5WicpP0k2bq+6lqJOOnJJeBBlmBJXKRx14JbV96Qy+dwAcLGoGUsa8yG6jvTQHwti39fBB8NAter+E11Yj7G+QO4LkoQ/7W8N7KAFC8WlFIeiwcoz0V446Kceu5DaRn9Ux2b1JeYljtS0a6axW+lG2lBljwyur4QXN3JZBtdR36iBZdhMbwL6nF2k3Quq0kieRJU9K24ltlWYiygnRDqkpyl+byFstLwix5u9lH7JZX/YQDkBnVHAVHXz27mOdihvxlJ41CKOPjTR8LmPRmoJS5W99lXVqNT/7PvV1FXrLnW3o2rgYdz/wmBaM5LVzZM5I36ZiCTJ310lg9eTcjgegQIA3O+Vx6CEoxFlwqvY/bqni7jbWpbg0wE2G7E9uQIm0psR9bLB+xjUkaZQ4kxiCRBFKzpa1IiaHAhHEgjhhYIUI82SOrSphCoqgLFQo803FPnA3hlQ1DL9RgF+VtwE7ygMJ0VKjcvC3tz3bnrHAtl7NWT/yFW4Kpmqs74t/a/hzlwiV/94n8iQywcqV5Mket5Af+eyRF0mbNClnev/jXc20FcZKt789z6zNbifmmdtLuSyKO1L0z68ZRP8XffVGGk6LPr7mk+jRlavqwmKvSUHf7BNwPqnMCmBcipSdJ7J126gCQcaXolJ6vCZlrbC5JKtL3ChJMOWcXvRKw5/3wToOkIHXnmq5ybnuWxlCqHFjIq/Z0H+K5ZUxw==
+    tls.key: AgDDH789wg8FXr2RiXhg67hH3PGw8hdniQELrIQTeqxcof+Bdecf09Y6kwVmya5SxNgL2pe37NBR+RYeo1jwzsTzn9AWSItOEvOz3aR1nv8wZAayaUmsJgOnR94gnm75c/aGto8JXmldV5dkP4iRJ2C3aM18T+PeBIslv+JnEdqbUq7x30npHovNJ5eWOs8i8TezX9JDGgJNEknz8vRy5b2GYWw7kZW3t3FO0ME/JLMj5UvwjW8tkis13iIBbX11Z7g1nGXyRM915e/xw/OM/lZMutdS4RWSFFpLnkXrjK6p3cnpqY7100b5bSbbH5rqp/hLeHSkrAPm2Mr/+dET8tb1Lbj1yNyhQlhpVjKLY0Oh/mtWmAtf7HZBsMaoJ4vLNNXweuxgNzs4Jd+Y8hoX8GhyrCNtpJ9WCqpAcRkV7viCrFPdMPeKBniRdvQbmMV6gpE2qCMuWKc5LZeFz2qkWTcI4GhXudnN7/SLyoIowFBp8O96UmdbRYMLD8O2ypU+U+BRa5SEPJSv08BXh1t0QjwsiFJTV2ifvsRU2XZRsRzeX8UBo33AVCACtCQfoVLN1Oy+hasG7tO5FcausQ9GXW2E4PpsNXLicmNBeLXEpa7gxoFmSYKMproqknv16ElMH660ma+WpFErvg1gKSNm1lbY75xzHjgDuWyTlXTwbxMXsOCJlQtkBMr/c2yolWAj4AqrrjBelsr08W/0k8TadSJG95Ful7D05bui1Q7KNyE+b0f2+iJRfxvPQySo6m8kskOoT4Umj/l957sMB/v/ujp/F2qRXi6JSxUn9De3Nh1kkHOdIswhVXc//o1xdGx610oACw5ObdtEgrU8KbgfIDvRCJieL84rPnIdJ2zPkytrg68LdcLgBdvCPTksnt2DBQJ0PzAkLrp21SZC920i4QGZJpO9jzZ6ahPWCk+WKUSZf/DSYAxYQCtbuU0DbUtezSu3c5jav5Lod9Lwg8dRngXJzQ/SzlMaOahPrA5Gwd9jFTxDzw==
+  template:
+    metadata:
+      annotations:
+        linkerd.io/created-by: linkerd/cli stable-2.12.0
+      creationTimestamp: null
+      labels:
+        linkerd.io/control-plane-component: identity
+        linkerd.io/control-plane-ns: linkerd
+      name: linkerd-trust-anchor
+      namespace: linkerd
+    type: kubernetes.io/tls
+  syncPolicy: 
+    automated:
+      prune: true
+      selfHeal: false
+    syncOptions:
+    - CreateNamespace=true
+    - ApplyOutOfSyncOnly=true

@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
 spec:
   source:
-    path: argocd
+    path: argocd-apps
     repoURL: 'https://github.com/angelopaolosantos/argocd-app-config.git'
     targetRevision: main
   destination:

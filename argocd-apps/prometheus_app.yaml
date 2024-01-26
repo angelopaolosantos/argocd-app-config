@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cert-manager
+  name: prometheus
   namespace: argocd
   finalizers:
     # The default behaviour is foreground cascading deletion
@@ -11,19 +11,19 @@ metadata:
 spec:
   project: default
   sources:
-  - chart: cert-manager
+  - repoURL: 'https://prometheus-community.github.io/helm-charts'
+    chart: kube-prometheus-stack
+    targetRevision: 56.1.0
     helm:
-      parameters:
-        - name: installCRDs
-          value: "true"
-    repoURL: https://charts.jetstack.io
-    targetRevision: 1.13.3
+      valueFiles:
+      - $values/resources/prometheus/values.yaml
   - repoURL: 'https://github.com/angelopaolosantos/argocd-app-config.git'
     targetRevision: main
-    path: apps/cert-manager/
+    path: resources/prometheus/
+    ref: values
   destination:
     server: https://kubernetes.default.svc
-    namespace: cert-manager
+    namespace: prometheus
   syncPolicy: 
     automated:
       prune: true
