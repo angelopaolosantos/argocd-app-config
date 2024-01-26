@@ -11,3 +11,10 @@ spec:
   source:
     path: resources/linkerd
     repoURL: 'https://github.com/angelopaolosantos/argocd-app-config.git'
+  syncPolicy: 
+    automated:
+      prune: true
+      selfHeal: false
+    syncOptions:
+    - CreateNamespace=true
+    - ApplyOutOfSyncOnly=true

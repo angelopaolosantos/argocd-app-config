@@ -63,3 +63,10 @@ spec:
     name:  linkerd-policy-validator-webhook-config
     jsonPointers:
     - /webhooks/0/clientConfig/caBundle
+  syncPolicy: 
+    automated:
+      prune: true
+      selfHeal: false
+    syncOptions:
+    - CreateNamespace=true
+    - ApplyOutOfSyncOnly=true
