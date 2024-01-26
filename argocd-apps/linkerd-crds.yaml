@@ -12,6 +12,21 @@ spec:
   destination:
     namespace: linkerd
     server: https://kubernetes.default.svc
+  ignoreDifferences:
+  - group: ""
+    kind: CustomResourceDefinition
+    name:  authorizationpolicies.policy.linkerd.io
+    jsonPointers:
+    - /spec/names/shortNames
+    - group: ""
+  - kind: CustomResourceDefinition
+    name:  meshtlsauthentications.policy.linkerd.io
+    jsonPointers:
+    - /spec/names/shortNames
+  - kind: CustomResourceDefinition
+    name:  networkauthentications.policy.linkerd.io
+    jsonPointers:
+    - /spec/names/shortNames
   syncPolicy: 
     automated:
       prune: true
