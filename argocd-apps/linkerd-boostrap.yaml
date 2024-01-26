@@ -7,7 +7,7 @@ spec:
   destination:
     namespace: linkerd
     server: https://kubernetes.default.svc
-  project: demo
+  project: default
   source:
     path: resources/linkerd
     repoURL: 'https://github.com/angelopaolosantos/argocd-app-config.git'
