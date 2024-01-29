@@ -11,8 +11,8 @@ spec:
     targetRevision: 1.9.0
     helm:
       parameters:
-      - name: identityTrustAnchorsPEM
-        value: |
+      - name: identityTrustAnchorsPEM 
+        value: | # Replace value below with generated sample-trust.crt value 
           -----BEGIN CERTIFICATE-----
           MIIBjjCCATSgAwIBAgIRAMfoOE2pn+cu13r8rhOQQYcwCgYIKoZIzj0EAwIwJTEj
           MCEGA1UEAxMacm9vdC5saW5rZXJkLmNsdXN0ZXIubG9jYWwwHhcNMjQwMTI2MTkz
@@ -66,7 +66,7 @@ spec:
   syncPolicy: 
     automated:
       prune: true
-      selfHeal: false
+      selfHeal: true
     syncOptions:
     - CreateNamespace=true
     - ApplyOutOfSyncOnly=true
