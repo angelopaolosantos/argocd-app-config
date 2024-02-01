@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: keycloak
+  namespace: argocd
+  finalizers:
+    # The default behaviour is foreground cascading deletion
+    - resources-finalizer.argocd.argoproj.io
+    # Alternatively, you can use background cascading deletion
+    # - resources-finalizer.argocd.argoproj.io/background
+spec:
+  project: default
+  sources:
+  - chart: keycloak
+    repoURL: https://charts.bitnami.com/bitnami
+    targetRevision: 18.3.3
+    helm:
+      valueFiles:
+      - $values/resources/keycloak/values.yaml
+  - repoURL: 'https://github.com/angelopaolosantos/argocd-app-config.git'
+    targetRevision: main
+    path: resources/keycloak/
+    ref: values
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: keycloak
+  syncPolicy: 
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
+    - ApplyOutOfSyncOnly=true

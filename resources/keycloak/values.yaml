@@ -1,0 +1,42 @@
+global:
+  # storageClass: local-storage
+  # Make sure rancher local-path-provisioner is installed
+  storageClass: local-path
+auth:
+  createAdminUser: true
+  adminUser: admin
+  adminPassword: admin
+  managementUser: manager
+  managementPassword: manager
+proxyAddressForwarding: true
+ingress:
+  ingressClassName: nginx
+  annotations: 
+    # add an annotation indicating the issuer to use.
+    cert-manager.io/cluster-issuer: ca-issuer
+  enabled: true
+  hostname: "keycloak.localdev.me"
+  tls: true
+  extraTls: # < placing a host in the TLS config will determine what ends up in the cert's subjectAltNames
+    - hosts:
+        - "keycloak.localdev.me"
+      secretName: keycloak.cluster-tls
+postgresql:
+  enabled: true
+  postgresqlPassword: password
+## Not required for edge proxy
+# tls:
+#   enabled: true
+#   existingSecret: keycloak.cluster-tls
+#   usePem: true
+extraEnvVars:
+  - name: KEYCLOAK_HOSTNAME
+    value: "keycloak.localdev.me"
+  # - name: KEYCLOAK_HOSTNAME_URL
+  #   value: "https://{{ keycloak_domain }}:8443"
+  # - name: KEYCLOAK_HOSTNAME_ADMIN_URL
+  #   value: "https://{{ keycloak_domain }}:8443/auth"
+  - name: KEYCLOAK_HOSTNAME_STRICT_HTTPS
+    value: "true"
+proxy: edge 
+# production: true
