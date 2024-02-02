@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: jenkins
+  namespace: argocd
+  finalizers:
+    # The default behaviour is foreground cascading deletion
+    - resources-finalizer.argocd.argoproj.io
+    # Alternatively, you can use background cascading deletion
+    # - resources-finalizer.argocd.argoproj.io/background
+spec:
+  project: default
+  sources:
+  - repoURL: 'https://charts.jenkins.io/'
+    chart: jenkins
+    targetRevision: 5.0.10
+    helm:
+      valueFiles:
+      - $values/resources/jenkins/values.yaml
+  - repoURL: 'https://github.com/angelopaolosantos/argocd-app-config.git'
+    targetRevision: main
+    path: resources/jenkins/
+    ref: values
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: jenkins
+  syncPolicy: 
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
+    - ApplyOutOfSyncOnly=true
